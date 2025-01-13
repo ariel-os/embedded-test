@@ -370,7 +370,7 @@ fn tests_impl(args: TokenStream, input: TokenStream) -> parse::Result<TokenStrea
             if cfg!(feature = "ariel-os") {
                 quote!(|| {
                     ariel_os::asynch::spawner().must_spawn(#ident_invoker());
-                    ariel_os::thread::sleep();
+                    ariel_os::thread::park();
                     unreachable!();
                 })
             } else {
