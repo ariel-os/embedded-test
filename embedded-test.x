@@ -14,3 +14,5 @@ SECTIONS
     KEEP(*(.embedded_test.*));
   }
 }
+
+INSERT AFTER .comment;
